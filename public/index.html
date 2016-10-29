@@ -3,6 +3,22 @@
 <head>
   <title>WebGL Globe</title>
   <meta charset="utf-8">
+
+
+<!-- firebase -->
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDLEKBUhVXlcaXNnqB5eUhV1BANdtB5C54",
+    authDomain: "webglglobe-a1410.firebaseapp.com",
+    databaseURL: "https://webglglobe-a1410.firebaseio.com",
+    storageBucket: "webglglobe-a1410.appspot.com",
+    messagingSenderId: "659577035224"
+  };
+  firebase.initializeApp(config);
+</script>
+<!-- firebase -->
   <style type="text/css">
     html {
       height: 100%;
@@ -129,6 +145,7 @@
 
   var xhr = new XMLHttpRequest();
   xhr.open('GET', '/globe-search/search.json', true);
+  // xhr.open('GET', '/globe-vertex-texture/third-party/meteorite.json', true);
   xhr.onreadystatechange = function(e) {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
